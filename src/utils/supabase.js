@@ -59,8 +59,7 @@ export const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 const supabaseClient = async (supabaseAccessToken) => {
-  // Log the token to check its format
-  console.log("Supabase Access Token:", supabaseAccessToken);
+
   
   // Create Supabase client with the access token
   const supabase = createClient(supabaseUrl, supabaseKey, {

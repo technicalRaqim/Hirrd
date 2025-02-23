@@ -8,6 +8,7 @@ import { BarLoader } from "react-spinners";
 
 const Onboarding = () => {
   const { user, isLoaded } = useUser();
+  console.log(user)
   const navigate = useNavigate();
 
   const navigateUser = (currRole) => {
@@ -30,7 +31,7 @@ const Onboarding = () => {
     if (user?.unsafeMetadata?.role) {
       navigateUser(user.unsafeMetadata.role);
     }
-  }, [user]);
+  }, [isLoaded, user]);
 
   if (!isLoaded) {
     return <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />;
